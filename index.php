@@ -64,12 +64,12 @@ $app->post('/contact', function() use($app){
     $result = $mailer->send($message);
     if($result > 0) {
         // send a message that says thank you.
-        $app->redirect('/');
+        $app->redirect('/about');
     } else {
         // send a message to the user that the message failed
         // log that there was an error
         $app->redirect('/contact');
     }
 });
-
+// Run app
 $app->run();
